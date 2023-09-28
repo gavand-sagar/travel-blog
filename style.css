@@ -1,0 +1,260 @@
+:root{
+    --theme-main-color : rgb(106, 168, 14); 
+}
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.header-left-container svg path {
+    fill: white;
+}
+
+.header-left-container {
+    display: flex;
+    gap: 20px;
+}
+
+.header-left-container>div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.header-right-container svg path {
+    fill: white;
+}
+
+.header-right-container {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-container {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+body {
+
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.524);
+    position: sticky;
+    top:0;
+}
+
+.nav-left {
+    padding-left: 3rem;
+}
+
+.nav-left h1 {
+    font-weight: bold;
+    color: var(--theme-main-color)
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+.nav-link-container {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    align-items: center;
+}
+
+.nav-link-container:hover{
+    background-color: rgba(150, 142, 142, 0.2);
+}
+
+.nav-link-container.active{    
+    border-bottom: var(--theme-main-color) 2px solid;
+    background-color: rgba(150, 142, 142, 0.5);
+}
+
+.nav-right .nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1000;
+    filter: brightness(25%) sepia(10%);
+}
+
+
+.search-box-container-background {
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box-container {
+    text-align: center;
+}
+
+.search-box-heading {
+    color: white;
+}
+
+.search-box-description {
+    color: white;
+}
+
+.searchbox {
+    background-color: white;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.searchbox .search-input {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.searchbox .search-button {
+    outline: none;
+    border: none;
+    background-color: var(--theme-main-color );
+    color: white;
+    font-weight: bold;  
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;  
+    width: 100px;
+}
+
+.about-section{
+    color: white;
+}
+
+.home-button{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: var(--theme-main-color);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+
+@media screen and (max-width: 761px) {
+    header{
+        display: none;
+    }
+    nav{
+        background-color: white;
+    }
+    .nav-right{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding: 10px;
+        margin-top: 50px;
+        background-color: white;
+        color: black;
+        align-items: start;
+        width: 200px;
+    }
+
+    .nav-link-container {
+        display: flex;
+        color: black;
+        padding-left: 15px;
+        height: 2.5rem; 
+        width: 100%;
+        border-left: 5px solid transparent;     
+    }
+
+    .nav-link-container:hover{
+        background-color: rgba(150, 142, 142, 0.1);
+    }
+    .nav-right .nav-link {
+        text-decoration: none;
+        color: black;
+        text-align: left;
+    }
+    
+    .nav-link-container.active{    
+        border-bottom: none;
+        border-left: 5px solid var(--theme-main-color);
+        background-color: rgba(150, 142, 142, 0.3);
+    }
+
+    .nav-right.hidden{
+        display: none;
+    }
+
+    .hamburger{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        background: white;
+        border: none;
+        font-size: 30px;
+    }
+
+}
